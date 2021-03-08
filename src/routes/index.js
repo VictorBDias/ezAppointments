@@ -11,9 +11,9 @@ const Drawer = createDrawerNavigator();
 export default function Routes() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Calendar" component={Calendar} />
+      <Drawer.Navigator initialRouteName="About">
         <Drawer.Screen name="About" component={About} />
+        <Drawer.Screen name="Calendar" component={Calendar} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

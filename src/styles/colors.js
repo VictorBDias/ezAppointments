@@ -1,9 +1,8 @@
 const colors = {
-  primary: '#f38fff',
-  primaryDark: '#FF78F8',
-  error: '#f08787',
-  background: '#18191a',
-  page: '#242526',
+  primary: '#50E3C2',
+  primaryDark: '#0B6E58',
+  accent: '#0B6E58',
+  background: '#232931',
 
   text: '#222',
 
@@ -18,7 +17,6 @@ const colors = {
 
   // WHITE
   whiteSmoke: '#F3F3F3',
-  graySmoke: '#CECECE4D',
 };
 
 export default colors;

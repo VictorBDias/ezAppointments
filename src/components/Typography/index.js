@@ -15,7 +15,16 @@ const styles = StyleSheet.create({
 
   highlight: {
     fontSize: 14,
-    //color: colors.primary,
+    color: colors.accent,
+  },
+  highlightBold: {
+    fontSize: 14,
+    color: colors.accent,
+    fontWeight: 'bold',
+  },
+  white: {
+    fontSize: 18,
+    color: colors.whiteSmoke,
   },
 });
 
@@ -28,6 +37,10 @@ const Typography = ({ type, ...rest }) => {
         return styles.regular;
       case 'highlight':
         return styles.highlight;
+      case 'highlightBold':
+        return styles.highlightBold;
+      case 'white':
+        return styles.white;
       default:
         return styles.regular;
     }
