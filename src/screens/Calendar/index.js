@@ -20,11 +20,6 @@ import {
 import Typography from '~/components/Typography';
 import colors from '~/styles/colors';
 import Header from '~/components/Header';
-// import { useCalendar } from '~/hooks/stacks/calendarScreen';
-// import OptionsModal from '~/components/utils/OptionsModal';
-
-// APIS
-// import { getAllAppointments, deleteAppointment } from '~/apis/admin/calendar';
 
 const CalendarScreen = () => {
   const navigation = useNavigation();
@@ -116,26 +111,8 @@ const CalendarScreen = () => {
   LocaleConfig.defaultLocale = 'br';
 
   // STATES
-  const [isLoaded, setIsLoaded] = React.useState(false);
   const [selectedShow, setSelectedShow] = useState('');
   const [selected, setSelected] = useState('2021-03-07');
-  const [appointmentId, setAppointmentId] = React.useState(null);
-  const [showModal, setShowModal] = React.useState(false);
-  const [isDeleting, setIsDeleting] = React.useState(false);
-
-  // useEffect(() => {
-  //   const fetch = async () => {
-  //     await getAllAppointments().then((response) => {
-  //       setAppointments(response.data);
-  //       const auxArray = response.data.map((appointment) => {
-  //         return appointment.date.split('T')[0];
-  //       });
-  //       setMarkedDates(auxArray);
-  //       setIsLoaded(true);
-  //     });
-  //   };
-  //   fetch();
-  // }, []);
 
   const onDayPress = (day) => {
     setSelected(day.dateString);
@@ -164,12 +141,7 @@ const CalendarScreen = () => {
       appointment.date.split('T')[0] === selected
     ) {
       return (
-        <TouchableOpacity
-          onLongPress={() => {
-            setAppointmentId(appointment.id);
-            setShowModal(true);
-          }}
-        >
+        <TouchableOpacity>
           <AppointmentCard>
             <Card.Content>
               <Title>{`${appointment.date.split('T')[1].split(':')[0]}:${
@@ -181,24 +153,7 @@ const CalendarScreen = () => {
         </TouchableOpacity>
       );
     }
-
-    // <Loader size="large" />;
   };
-
-  // const handleAppointmentDelete = async () => {
-  //   setShowModal(false);
-  //   setIsDeleting(true);
-
-  //   await deleteAppointment({ appointmentId }).then(() => {
-  //     const auxArray = appointments;
-
-  //     const filteredArray = auxArray.filter((obj) => obj.id !== appointmentId);
-
-  //     setAppointments(filteredArray);
-  //   });
-
-  //   setIsDeleting(false);
-  // };
 
   function markDates() {
     const newDaysObject = {};
@@ -270,19 +225,6 @@ const CalendarScreen = () => {
         />
 
         {renderDay()}
-        {/* <OptionsModal
-          isVisible={showModal}
-          onClose={() => setShowModal(false)}
-          title="Escolha uma opção"
-          options={[
-            {
-              name: 'Cancelar agendamento',
-              icon: 'delete',
-              // onPress: handleAppointmentDelete,
-              color: colors.error,
-            },
-          ]}
-        /> */}
       </ScrollView>
     </>
   );

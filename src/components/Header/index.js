@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import {
   Header as NativeHeader,
   Title,
@@ -8,18 +9,17 @@ import {
   Body,
   Icon,
 } from 'native-base';
+import { MaterialIcons } from '@expo/vector-icons';
 
 // CUSTOM IMPORTS
 import { colors } from '~/styles';
-import { Container } from './styles';
 
 const Header = ({ title, iconLeft, iconRight, edit, openSideMenu, right }) => {
   return (
-    <Container>
+    <View>
       <NativeHeader
         style={{ backgroundColor: '#fff' }}
         androidStatusBarColor={colors.whiteSmoke}
-        iosBarStyle="dark-content"
         noShadow
       >
         <Left>
@@ -33,11 +33,11 @@ const Header = ({ title, iconLeft, iconRight, edit, openSideMenu, right }) => {
         </Body>
         <Right>
           <Button transparent light onPress={edit}>
-            <Icon name={iconRight} />
+            <MaterialIcons name={iconRight} size={24} color={colors.black50} />
           </Button>
         </Right>
       </NativeHeader>
-    </Container>
+    </View>
   );
 };
 

@@ -6,14 +6,25 @@ export const Container = styled.View`
   padding: 16px;
 `;
 
-export const PhotoButton = styled.Button`
+export const PhotoButton = styled.View`
   background-color: #3eb097;
+  height: 40px;
+  width: 160px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-bottom: 16px;
+`;
+
+export const ButtonText = styled.Text`
+  font-size: 14;
+  color: #f3f3f3;
+  font-weight: bold;
 `;
 
 export const DescriptionInput = styled.TextInput`
   width: 328px;
   border: none;
-  margin-top: 24px;
   text-align: center;
   border-bottom-width: 1px;
   border-bottom-color: #ccc;
@@ -31,40 +42,4 @@ export const Text = styled.Text`
   text-align: left;
   margin-top: 8px;
   width: 201px;
-`;
-
-export const OccupationText = styled.TextInput`
-  width: 200px;
-  margin-top: 8px;
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  text-align: left;
-`;
-
-export const OccupationImage = styled.Image`
-  width: 112px;
-  height: 112px;
-  margin-top: 8px;
-`;
-
-export const ImageLoader = styled.View`
-  width: 112px;
-  height: 112px;
-  border-radius: 8px;
-  background: #e7e7e7;
-`;
-
-export const DescriptionLoader = styled.View`
-  background: #e7e7e7;
-  width: 150px;
-  height: 10px;
-  border-radius: 8px;
-`;
-
-export const DescriptionLoader2 = styled(DescriptionLoader)`
-  width: 80px;
-  height: 10px;
-  margin-top: 16px;
 `;
