@@ -13,7 +13,7 @@ import {
 import { colors } from '~/styles';
 import { Container } from './styles';
 
-const Header = ({ title, iconLeft, openSideMenu, right }) => {
+const Header = ({ title, iconLeft, iconRight, edit, openSideMenu, right }) => {
   return (
     <Container>
       <NativeHeader
@@ -31,7 +31,11 @@ const Header = ({ title, iconLeft, openSideMenu, right }) => {
         <Body>
           <Title style={{ color: colors.text }}>{title}</Title>
         </Body>
-        <Right>{right}</Right>
+        <Right>
+          <Button transparent light onPress={edit}>
+            <Icon name={iconRight} />
+          </Button>
+        </Right>
       </NativeHeader>
     </Container>
   );

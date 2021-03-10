@@ -6,6 +6,10 @@ export const Container = styled.View`
   padding: 16px;
 `;
 
+export const PhotoButton = styled.Button`
+  background-color: #3eb097;
+`;
+
 export const DescriptionInput = styled.TextInput`
   width: 328px;
   border: none;
@@ -14,11 +18,12 @@ export const DescriptionInput = styled.TextInput`
   border-bottom-width: 1px;
   border-bottom-color: #ccc;
   padding-bottom: 16px;
+  color: #00000080;
 `;
 
 export const Logo = styled.Image`
-  width: 194px;
-  height: 82px;
+  width: 217px;
+  height: 50px;
   margin-bottom: 16px;
 `;
 

@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  ScrollView,
-  View,
-  TouchableOpacity,
-  Image,
-  Button,
-} from 'react-native';
+import { ScrollView, View, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
@@ -28,6 +22,7 @@ import {
   DescriptionInput,
   DescriptionLoader,
   DescriptionLoader2,
+  PhotoButton,
 } from './styles';
 // import Button from '~/components/Button';
 
@@ -37,7 +32,7 @@ const Home = () => {
   // STATES
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [description, setDescription] = useState(
-    'teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste '
+    'Bem vindo ao ezAppointments, o intuito desse aplicativo é oferecer ao seu negócio facilidade de gestão e gerencia sobre agendamentos realizados com seu cliente. Assim que contratar nossos serviços você poderá substituir nossa logo pela sua própria, assim como adicionar uma imagem e apresentação do seu estabelecimento para seus clientes se situarem. Na funcionalidade de calendário você poderá criar agendamentos para seus usuários em um banco de dados reservado para sua aplicação, assim seus clientes e você sempre terão esse controle em mãos. Agradecemos a preferencia (:'
   );
   const [editable, setEditable] = useState(false);
   const [showModal, setShowModal] = React.useState(false);
@@ -46,16 +41,6 @@ const Home = () => {
   const [image, setImage] = useState(null);
 
   // FUNCTIONS
-  // useEffect(() => {
-  //   const fetch = async () => {
-  //     await getAboutData().then((response) => {
-  //       setDescription(response.data.description);
-  //       setServices(response.data.services);
-  //       setIsLoaded(true);
-  //     });
-  //   };
-  //   fetch();
-  // }, []);
 
   useEffect(() => {
     (async () => {
@@ -64,36 +49,32 @@ const Home = () => {
           status,
         } = await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (status !== 'granted') {
-          alert('Sorry, we need camera roll permissions to make this work!');
+          alert('Conceda permissão');
         }
       }
     })();
   }, []);
 
-  React.useLayoutEffect(() => {
-    // async function postDescriptionApi() {
-    //   await postAboutData(description);
-    // }
-
-    navigation.setOptions({
-      headerRight: () => (
-        <View style={{ flexDirection: 'row', marginEnd: 16 }}>
-          <TouchableOpacity
-            onPress={() => {
-              // setEditable(!editable);
-              // if (editable === true) postDescriptionApi();
-            }}
-          >
-            <MaterialIcons
-              name={editable ? 'check-circle' : 'edit'}
-              size={24}
-              color={colors.black50}
-            />
-          </TouchableOpacity>
-        </View>
-      ),
-    });
-  }, [navigation, editable]);
+  // React.useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerRight: () => (
+  //       <View style={{ flexDirection: 'row', marginEnd: 16 }}>
+  //         <TouchableOpacity
+  //           onPress={() => {
+  //             // setEditable(!editable);
+  //             // if (editable === true) postDescriptionApi();
+  //           }}
+  //         >
+  //           <MaterialIcons
+  //             name={editable ? 'check-circle' : 'edit'}
+  //             size={24}
+  //             color={colors.black50}
+  //           />
+  //         </TouchableOpacity>
+  //       </View>
+  //     ),
+  //   });
+  // }, [navigation, editable]);
 
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -131,6 +112,8 @@ const Home = () => {
         title="Sobre"
         iconLeft="menu"
         openSideMenu={navigation.openDrawer}
+        iconRight="edit"
+        edit={navigation.openDrawer}
       />
       <ScrollView>
         <Container>
@@ -161,7 +144,7 @@ const Home = () => {
         <View
           style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
         >
-          <Button title="Adicionar" onPress={pickImage} />
+          <PhotoButton title="Adicionar" onPress={pickImage} />
           {image && (
             <Image
               source={{ uri: image }}
