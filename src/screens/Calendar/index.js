@@ -178,7 +178,7 @@ const CalendarScreen = () => {
             <WeekDayText>{showWeekday()}</WeekDayText>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('userList', { selected });
+                navigation.navigate('CreateAppointment', { selected });
               }}
             >
               <MaterialIcons
@@ -199,7 +199,7 @@ const CalendarScreen = () => {
   return (
     <>
       <Header
-        title="Calendario"
+        title="Calendário"
         iconLeft="menu"
         openSideMenu={navigation.openDrawer}
       />

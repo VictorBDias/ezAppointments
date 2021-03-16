@@ -100,7 +100,12 @@ const Home = () => {
           {image && (
             <Image
               source={{ uri: image }}
-              style={{ width: 300, height: 200 }}
+              style={{
+                width: 300,
+                height: 200,
+                marginBottom: 24,
+                borderRadius: 4,
+              }}
             />
           )}
         </View>
