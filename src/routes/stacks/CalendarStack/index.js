@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 // SCREENS
 import Calendar from '~/screens/Calendar';
 import CreateAppointment from '~/screens/Calendar/CreateAppointment';
+import UserList from '~/screens/Calendar/UserList';
 
 // CUSTOM IMPORTS
 import { colors } from '~/styles';
@@ -39,6 +40,15 @@ const CalendarStack = ({ navigation }) => {
         <Stack.Screen
           name="CreateAppointment"
           component={CreateAppointment}
+          options={{
+            title: 'Adicionar Agendamento',
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="UserList"
+          component={UserList}
           options={{
             title: 'Adicionar Agendamento',
             headerShown: false,

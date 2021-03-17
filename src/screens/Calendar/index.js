@@ -111,7 +111,7 @@ const CalendarScreen = () => {
   LocaleConfig.defaultLocale = 'br';
 
   // STATES
-  const [selectedShow, setSelectedShow] = useState('');
+  const [selectedShow, setSelectedShow] = useState('2021-03-07');
   const [selected, setSelected] = useState('2021-03-07');
 
   const onDayPress = (day) => {
@@ -178,7 +178,7 @@ const CalendarScreen = () => {
             <WeekDayText>{showWeekday()}</WeekDayText>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('CreateAppointment', { selected });
+                navigation.navigate('UserList', { selected });
               }}
             >
               <MaterialIcons

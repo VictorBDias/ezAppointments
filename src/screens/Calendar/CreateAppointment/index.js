@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInputMask } from 'react-native-masked-text';
 import { parseISO } from 'date-fns';
@@ -26,7 +26,7 @@ const CreateAppointment = ({ route }) => {
   const formRef = React.useRef(null);
 
   // STATES
-  const [nameValue, setNameValue] = React.useState('Nome do usuário');
+  const [nameValue, setNameValue] = React.useState('Victor Batisttete');
   const [appointmentHour, setAppointmentHour] = React.useState();
   const [appointmentDescription, setAppointmentDescription] = React.useState(
     ''
@@ -73,13 +73,15 @@ const CreateAppointment = ({ route }) => {
                 setAppointmentDescription(text);
               }}
             />
-            <Button
+            <TouchableOpacity
               onPress={() => {
-                handleSubmit();
+                navigation.navigate('Calendar');
               }}
             >
-              <ButtonText>Marcar horário</ButtonText>
-            </Button>
+              <Button>
+                <ButtonText>Marcar horário</ButtonText>
+              </Button>
+            </TouchableOpacity>
           </Form>
         </ScrollView>
       </Container>
