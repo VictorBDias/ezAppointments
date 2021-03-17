@@ -5,7 +5,7 @@ import { MyInput } from './styles';
 function InputText() {
   return (
     <MyInput>
-      <Text>Eta</Text>
+      <Text>Label</Text>
       <Input type="text" name="name" />
     </MyInput>
   );

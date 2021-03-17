@@ -12,8 +12,9 @@ import {
   Form,
   Input,
   Button,
-  MaskedText,
+  InputMask,
   ButtonText,
+  InputLabel,
 } from './styles';
 import { colors } from '~/styles';
 import Typography from '~/components/Typography';
@@ -25,10 +26,7 @@ const CreateAppointment = ({ route }) => {
   const formRef = React.useRef(null);
 
   // STATES
-  // const { markedDates, setMarkedDates } = useCalendar();
-  // const [isCreating, setIsCreating] = React.useState(false);
-  // const { appointments, setAppointments } = useCalendar();
-  const [nameValue, setNameValue] = React.useState('nothing');
+  const [nameValue, setNameValue] = React.useState('Nome do usuário');
   const [appointmentHour, setAppointmentHour] = React.useState();
   const [appointmentDescription, setAppointmentDescription] = React.useState(
     ''
@@ -37,26 +35,6 @@ const CreateAppointment = ({ route }) => {
   // FUNCTIONS
   function handleSubmit() {
     console.log('enviado');
-    //   const dispatchSubmit = async () => {
-    //     // console.log('dia', selected);
-    //     // console.log('hora', data.schedule);
-    //     console.log(appointmentHour);
-    //     const concat = parseISO(`${`${date}T${appointmentHour}:00.000Z`}`);
-    //     setIsCreating(true);
-    //     await createAppointment(concat, appointmentDescription, userId).then(
-    //       (response) => {
-    //         setAppointments([...appointments, response.data]);
-    //         setMarkedDates([...markedDates, date]);
-    //         navigation.navigate('Calendar');
-    //       }
-    //     );
-    //     setIsCreating(false);
-    //   };
-    //   try {
-    //     dispatchSubmit();
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
   }
 
   return (
@@ -71,13 +49,8 @@ const CreateAppointment = ({ route }) => {
           <Form ref={formRef} onSubmit={() => {}}>
             <Typography type="title">{nameValue}</Typography>
 
-            {/* <Input
-            name="schedule"
-            title="Horário"
-            placeholder="Horário para o agendamento"
-          /> */}
-
-            <TextInputMask
+            <InputLabel>Horário</InputLabel>
+            <InputMask
               type="datetime"
               title="Horário"
               name="schedule"
@@ -91,6 +64,7 @@ const CreateAppointment = ({ route }) => {
               }}
             />
 
+            <InputLabel>Descrição</InputLabel>
             <Input
               name="description"
               title="Descrição"
@@ -99,9 +73,7 @@ const CreateAppointment = ({ route }) => {
                 setAppointmentDescription(text);
               }}
             />
-
             <Button
-              // isLoading={isCreating}
               onPress={() => {
                 handleSubmit();
               }}
