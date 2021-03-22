@@ -1,8 +1,8 @@
 Arguments: 
-  /snap/node/3292/bin/node /snap/node/3292/bin/yarn.js add expo-app-loading
+  /snap/node/3292/bin/node /snap/node/3292/bin/yarn.js add firebase@7.9.0
 
 PATH: 
-  /home/kenzo/.rbenv/plugins/ruby-build/bin:/home/kenzo/.rbenv/shims:/home/kenzo/.rbenv/bin:/home/kenzo/.rbenv/plugins/ruby-build/bin:/home/kenzo/.rbenv/shims:/home/kenzo/.rbenv/bin:/home/kenzo/.zinit/polaris/sbin:/home/kenzo/.zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kenzo/Android/Sdk/tools:/home/kenzo/Android/Sdk/platform-tools:/home/kenzo/Android/Sdk/tools:/home/kenzo/Android/Sdk/platform-tools
+  /home/victor/.npm-global/bin:/usr/local/bin:/home/victor/.zinit/polaris/bin:/home/victor/.npm-global/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/victor/linux-files/Android/Sdk/emulator:/home/victor/linux-files/Android/Sdk/tools:/home/victor/linux-files/Android/Sdk/tools/bin:/home/victor/linux-files/Android/Sdk/platform-tools:/home/victor/Documents/mongodb/bin:/home/victor/linux-files/Android/Sdk/emulator:/home/victor/linux-files/Android/Sdk/tools:/home/victor/linux-files/Android/Sdk/tools/bin:/home/victor/linux-files/Android/Sdk/platform-tools:/home/victor/Documents/mongodb/bin
 
 Yarn version: 
   1.22.5
@@ -49,7 +49,7 @@ npm manifest:
       "@unform/core": "^2.1.3",
       "@unform/mobile": "^2.1.3",
       "axios": "^0.19.2",
-      "date-fns": "^2.16.1",
+      "date-fns": "^2.19.0",
       "expo": "^40.0.0",
       "expo-app-loading": "^1.0.1",
       "expo-font": "^8.4.0",
@@ -63,11 +63,13 @@ npm manifest:
       "react": "~16.11.0",
       "react-dom": "~16.11.0",
       "react-native": "^0.63.4",
-      "react-native-calendars": "^1.1129.0",
+      "react-native-calendars": "^1.1254.0",
       "react-native-cli": "^2.0.1",
       "react-native-elements": "^3.1.0",
       "react-native-gesture-handler": "^1.9.0",
+      "react-native-image-picker": "^3.2.1",
       "react-native-lightbox": "^0.8.1",
+      "react-native-linear-gradient": "^2.5.6",
       "react-native-logs": "^2.2.1",
       "react-native-masked-text": "^1.13.0",
       "react-native-modal": "^11.5.6",
@@ -6104,10 +6106,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-0.9.0.tgz#1524579e56dc07675c640b41735a7665c0659240"
     integrity sha512-4JybB6PbR+EebpFx/KyR5Ybl+TcdXMLIJkyYsCx3P4M4CWGMuDyFF19yh6TyasMAIF5lrsgIxiSHBXh2FFc7Fg==
   
-  date-fns@^2.16.1:
-    version "2.16.1"
-    resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
-    integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
+  date-fns@^2.19.0:
+    version "2.19.0"
+    resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.19.0.tgz#65193348635a28d5d916c43ec7ce6fbd145059e1"
+    integrity sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==
   
   dateformat@3.0.3:
     version "3.0.3"
@@ -10930,7 +10932,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
     integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
     dependencies:
-      encoding "^0.1.12"
       minipass "^3.1.0"
       minipass-sized "^1.0.3"
       minizlib "^2.0.0"
@@ -13189,10 +13190,10 @@ Lockfile:
     dependencies:
       prop-types "^15.7.2"
   
-  react-native-calendars@^1.1129.0:
-    version "1.1129.0"
-    resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.1129.0.tgz#871fcb20af98507f77ac687365f0473d7357e274"
-    integrity sha512-F5z8v/oWshtqyuZC+enBADuo/pETZNO/acX3TKcp4j4fU043Mh804tqJWw61y6eU+N4e8Z8r0GRqvUd42XCgQA==
+  react-native-calendars@^1.1254.0:
+    version "1.1254.0"
+    resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.1254.0.tgz#49dfb880c6588188a49ba15ecfb56cace2d3b3fe"
+    integrity sha512-6nnrOdpgyJrnu5BpUq+jfKFtLvBEy+csgmQQJ5XQvvIoeoI110TwPfDlQ2U6dUF9wjcge3Sg0UcnimlFXNj8Zg==
     dependencies:
       hoist-non-react-statics "^3.3.1"
       immutable "^4.0.0-rc.12"
@@ -13259,6 +13260,11 @@ Lockfile:
       invariant "^2.2.4"
       prop-types "^15.7.2"
   
+  react-native-image-picker@^3.2.1:
+    version "3.2.1"
+    resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-3.2.1.tgz#97119ffef0ac2de2862f61ac38c2f5af99e9de18"
+    integrity sha512-nOBZzYGmE5qZ8JBCvhWHQA+umYnQ8Jd3HGmgxBnmi0/82mU2nwCCnrzHsb29Q+DD7YasYr64rm8uWBBow8L5Fw==
+  
   react-native-iphone-x-helper@^1.0.3, react-native-iphone-x-helper@^1.2.1:
     version "1.2.1"
     resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
@@ -13275,6 +13281,11 @@ Lockfile:
     integrity sha512-TFZA6iKEEHpAUIXjMTRb6vx0/9rHgEKy3ZBiRAy295PwldYg5c8opwnbyURLIl522ykeqhVx9uGdXjSMIowLvA==
     dependencies:
       prop-types "^15.7.2"
+  
+  react-native-linear-gradient@^2.5.6:
+    version "2.5.6"
+    resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
+    integrity sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg==
   
   react-native-logs@^2.2.1:
     version "2.2.1"
