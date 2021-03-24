@@ -55,9 +55,11 @@ const Drawer = createDrawerNavigator();
 const AppStack = createStackNavigator();
 
 export default function Routes() {
-  return (
+  const isSigned = true;
+
+  const Auth = () => (
     <NavigationContainer>
-      {/* <AppStack.Navigator
+      <AppStack.Navigator
         screenOptions={{
           cardStyle: {
             backgroundColor: '#fff',
@@ -76,9 +78,19 @@ export default function Routes() {
           component={SignIn}
           options={{ headerShown: false }}
         />
-        <AppStack.Screen name="SignUp" component={SignUp} />
-      </AppStack.Navigator> */}
+        <AppStack.Screen
+          name="SignUp"
+          component={SignUp}
+          options={{
+            title: 'Nova Conta',
+          }}
+        />
+      </AppStack.Navigator>
+    </NavigationContainer>
+  );
 
+  const Signed = () => (
+    <NavigationContainer>
       <Drawer.Navigator
         drawerContent={(props) => <CustomDrawerContent {...props} />}
         initialRouteName="About"
@@ -113,4 +125,6 @@ export default function Routes() {
       </Drawer.Navigator>
     </NavigationContainer>
   );
+
+  return isSigned ? <Signed /> : <Auth />;
 }
