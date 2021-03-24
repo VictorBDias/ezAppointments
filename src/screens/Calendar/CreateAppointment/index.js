@@ -6,7 +6,6 @@ import { parseISO } from 'date-fns';
 
 // CUSTOM IMPORTS
 import Header from '~/components/Header';
-import InputText from '~/components/Input';
 import {
   Container,
   Form,
@@ -17,6 +16,8 @@ import {
   InputLabel,
 } from './styles';
 import { colors } from '~/styles';
+import PrimaryInput from '~/components/Input/primary';
+import MaskedInput from '~/components/Input/masked';
 import Typography from '~/components/Typography';
 
 const CreateAppointment = ({ route }) => {
@@ -63,6 +64,13 @@ const CreateAppointment = ({ route }) => {
                 setAppointmentHour(text);
               }}
             />
+            {/* <MaskedInput
+              description="Horário"
+              valor={appointmentHour}
+              onChangeText={(text) => {
+                setAppointmentHour(text);
+              }}
+            /> */}
 
             <InputLabel>Descrição</InputLabel>
             <Input
@@ -73,6 +81,13 @@ const CreateAppointment = ({ route }) => {
                 setAppointmentDescription(text);
               }}
             />
+            {/* <PrimaryInput
+              description="Descrição"
+              onChangeText={(text) => {
+                setAppointmentDescription(text);
+                console.log(appointmentDescription);
+              }}
+            /> */}
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Calendar');

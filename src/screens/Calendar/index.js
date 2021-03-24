@@ -111,7 +111,7 @@ const CalendarScreen = () => {
   LocaleConfig.defaultLocale = 'br';
 
   // STATES
-  const [selectedShow, setSelectedShow] = useState('2021-03-07');
+  const [selectedShow, setSelectedShow] = useState('2071-03-07');
   const [selected, setSelected] = useState('2021-03-07');
 
   const onDayPress = (day) => {
